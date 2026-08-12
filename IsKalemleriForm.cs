@@ -1,4 +1,4 @@
-﻿using CalismaFisiApp.Helpers;
+using CalismaFisiApp.Helpers;
 using CalismaFisiApp.Models;
 using CalismaFisiApp.Repositories;
 using System;
@@ -241,8 +241,7 @@ namespace CalismaFisiApp
 
         private void btnYeniIsKalemi_Click(object sender, EventArgs e)
         {
-            // NOT: Projenizdeki İş Kalemi Ekleme formunun adı IsKalemiEkleForm değilse aşağıdaki ismi güncelleyin.
-            using (var frm = new IsKalemiEkleForm(_aktifKullaniciId))
+            using (var frm = new IsKalemiDuzenleForm(_aktifKullaniciId))
             {
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
@@ -262,8 +261,7 @@ namespace CalismaFisiApp
 
             if (kolonAdi == "btnDuzenle")
             {
-                // NOT: Projenizdeki İş Kalemi Düzenleme/Ekleme formunun adını kontrol edin.
-                using (var frm = new IsKalemiEkleForm(_aktifKullaniciId, satir.Id))
+                using (var frm = new IsKalemiDuzenleForm(_aktifKullaniciId, satir.Id))
                 {
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
